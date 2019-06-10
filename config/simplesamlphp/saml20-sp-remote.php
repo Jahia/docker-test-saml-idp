@@ -9,3 +9,8 @@ $metadata[getenv('SIMPLESAMLPHP_SP_ENTITY_ID')] = array(
     'AssertionConsumerService' => getenv('SIMPLESAMLPHP_SP_ASSERTION_CONSUMER_SERVICE'),
     'SingleLogoutService' => getenv('SIMPLESAMLPHP_SP_SINGLE_LOGOUT_SERVICE'),
 );
+
+$metadata['jahia.sp.id'] = array(
+    'AssertionConsumerService' => 'http://localhost/cms/login.SAML.incoming',
+    'SingleLogoutService' => 'http://localhost/cms/logout.SAML.incoming',
+);
