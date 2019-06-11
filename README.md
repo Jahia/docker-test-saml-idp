@@ -13,15 +13,18 @@ The contained version of SimpleSAMLphp is 1.15.2.
 ## Usage
 
 ```
-docker run --name=testsamlidp_idp -d faissah/test-saml-idp
+docker run --name=testsamlidp_idp \      
+-p 8081:8080 \
+-p 8444:8443 \
+-d faissah/docker-test-saml-idp 
 ```
 
 There are two static users configured in the IdP with the following data:
 
-| UID | Username | Password | Group | Email |
-|---|---|---|---|---|
-| 1 | user1 | password | group1 | user1@jahia.com |
-| 2 | user2 | password | group2 | user2@jahia.com |
+| UID | Username | Password | Email | First Name | Last Name | Group |
+|---|---|---|---|---|---|---|
+| 1 | user1 | password | user1@jahia.com | Richard | Brown | group1 |
+| 2 | user2 | password | user2@jahia.com | Cathy | Smith | group2 |
 
 
 You can access the SimpleSAMLphp web interface of the IdP under `http://localhost:8081/simplesaml`. The admin password is `secret`.
@@ -34,9 +37,13 @@ To ensure that the IdP works you can use Jahia DX with a SAML valve as test SP.
 Build and deploy the  [Jahia SAML valve](https://github.com/Jahia/saml-authentication-valve) and configure it using the README.
 
 For this test the following is assumed:
-- The entity id of the SP is `jahia.sp.id`.
-- The local development URL of the SP (Jahia DX) is `http://localhost`.
+
+- your DX site has `digitallsso` for server name and  `digitallsso` for sitekey
+- the SAML valve is deployed on your DX instance
 - The local development URL of the IdP is `http://localhost:8081`.
+- The entity id of the SP is `jahia.sp.id`.
+- The local development URL of the SP (Jahia DX) is `http://digitallsso`.
+
 
 ## Additional Documentation
 
