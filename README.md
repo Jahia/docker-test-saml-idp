@@ -39,6 +39,7 @@ Build and deploy the  [Jahia SAML valve](https://github.com/Jahia/saml-authentic
 For this test the following is assumed:
 
 - your DX site has `digitallsso` for server name and  `digitallsso` for sitekey
+- your DX is running on port `80`
 - the SAML valve is deployed on your DX instance
 - The local development URL of the IdP is `http://localhost:8081`.
 - The entity id of the SP is `jahia.sp.id`.
