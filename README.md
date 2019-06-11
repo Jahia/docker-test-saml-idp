@@ -40,13 +40,20 @@ For this test the following is assumed:
 
 - your DX site has `digitallsso` for server name and  `digitallsso` for sitekey
 - your DX is running on port `80`
-- the SAML valve is deployed on your DX instance
 - The local development URL of the IdP is `http://localhost:8081`.
-- The entity id of the SP is `jahia.sp.id`.
 - The local development URL of the SP (Jahia DX) is `http://digitallsso`.
+- the SAML valve is deployed on your DX instance
+- The Relying Party Identifier of the SP is `jahia.sp.id` (configured in valve).
+- The Incoming Target Url is `/cms/login.SAML.incoming` (configured in valve).
+- The Identity Provider Metadata file is accessible under http://localhost:8081/simplesaml/saml2/idp/metadata.php  (configured in valve).
 
 
-## Additional Documentation
+## SAML Valve Configuration Documentation 
+
+In order to properly configure your valve, pleaes have a look at its github README:
+https://github.com/Jahia/saml-authentication-valve
+
+## Additional  Docker Test SAML Documentation
 
 For more documentation, please have a look at the parent github repository:
 https://github.com/kristophjunge/docker-test-saml-idp
